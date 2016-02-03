@@ -4,7 +4,7 @@ I use this primarily to look at log files created in akka applications and for p
 
 - `cat app.log | grcat conf.log | less`
 
-- set psql's pager to use grcat via the PAGER env variable, e.g. `export PAGER="grcat psql | less -iMSx4 -FX"`
+- set psql's pager to use grcat via the PAGER env variable, e.g. `export PAGER="grcat conf.psql | less -iMSx4 -FX"`
 
 
 # Generic Colouriser
