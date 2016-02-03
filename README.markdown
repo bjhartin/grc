@@ -1,3 +1,12 @@
+# Notes for bjhartin fork
+
+I use this primarily to look at log files created in akka applications and for plsql.  Here's how:
+
+- `cat app.log | grcat conf.log | less`
+
+- set psql's pager to use grcat via the PAGER env variable, e.g. `export PAGER="grcat psql | less -iMSx4 -FX"`
+
+
 # Generic Colouriser
 
 Radovan Garabík  http://kassiopeia.juls.savba.sk/~garabik/software/grc.html
