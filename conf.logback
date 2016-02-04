@@ -18,42 +18,54 @@
 
 # Dispatcher
 regexp=\[([^\]]*)]
-colours="\033[38;5;247m","\033[38;5;072m"
+colours=previous,"\033[38;5;044m"
 skip=no
-count=more
 -
 # log levels
 regexp=\[(DEBUG)\]
-colours="\033[38;5;247m","\033[38;5;31m"
+colours=previous,"\033[38;5;31m"
 skip=no
 -
 regexp=\[(INFO)\]
-colours="\033[38;5;247m",blue
+colours=previous,blue
 skip=no
 -
 regexp=\[(WARN)\]
-colours="\033[38;5;247m",yellow
+colours=previous,yellow
 skip=no
 -
 regexp=\[(ERROR)\]
-colours="\033[38;5;247m",red
+colours=previous,red
 skip=no
 -
 # Timestamp
 regexp=\[(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2},\d{3})\]
-colours="\033[38;5;247m","\033[38;5;252m"
+colours=previous,"\033[38;5;252m"
+skip=no
 -
 # logger
-regexp= ([a-z]\.)+([a-zA-Z$_0-9]+) (akka[^ ]+)? 
-colours="\033[38;5;028m"
+regexp= ([a-z]\.)+([a-zA-Z_0-9\$]+)( akka[^ ]+)?
+colours="\033[38;5;078m"
 skip=no
 -
 # UUIDs
 regexp=[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}
-colours="\033[38;5;239m"
+colours="\033[38;5;137m"
 skip=no
 -
 regexp=[a-fA-F0-9]{40}
-colours="\033[38;5;239m"
+colours="\033[38;5;137m"
 skip=no
-
+-
+# core-fetch specific
+regexp=SOAPAction -> "([^"]+)"
+colours=previous,"\033[38;5;137m"
+skip=no
+-
+regexp=(: jXchange Interaction) - URI: https://([a-zA-Z0-9\.]+)
+colours=previous,"\033[38;5;078m","\033[38;5;137m"
+skip=no
+-
+regexp=>([^>]+)<
+colours=previous,"\033[38;5;137m"
+skip=no
