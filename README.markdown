@@ -2,7 +2,13 @@
 
 I use this primarily to look at log files created in akka applications and for plsql.  Here's how:
 
-- `cat app.log | grcat conf.log | less`
+- `cat app.log | grcat conf.logback | less -r`
+
+Or, more succinctly (due to the entry in grc.conf which maps *.log files to the conf.logback config file:
+
+- `grc app.log | less`
+
+For plsql:
 
 - set psql's pager to use grcat via the PAGER env variable, e.g. `export PAGER="grcat conf.psql | less -iMSx4 -FX"`
 
